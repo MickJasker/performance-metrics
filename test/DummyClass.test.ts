@@ -8,6 +8,6 @@ describe('Dummy', () => {
     dummyClass = new DummyClass();
   });
   test('should be a dummy', () => {
-
+    expect(dummyClass.dummy).toBe('I am a dummy class!')
   })
 });
