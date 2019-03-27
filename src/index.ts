@@ -1,7 +1,3 @@
-class Class {
-  public getData(): string {
-    return '';
-  }
-}
+import DeviceSpecifications from './lib/DeviceSpecifications';
 
-export default Class
+export {DeviceSpecifications};
