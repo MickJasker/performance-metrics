@@ -8,6 +8,12 @@ interface Browser {
   major: string;
 }
 
+interface OS {
+  name: string;
+  version: string;
+  major: string;
+}
+
 /**
  * @namespace DeviceSpecifications
  * @class DeviceSpecifications
@@ -33,6 +39,14 @@ class DeviceSpecifications {
       name: this.agent.family,
       version: `${this.agent.major}.${this.agent.major}.${this.agent.patch}`,
       major: this.agent.major,
+    }
+  }
+
+  public getOperatingSystem(): OS {
+    return {
+      name: this.agent.os.family,
+      version: `${this.agent.os.major}.${this.agent.os.minor}.${this.agent.os.patch}`,
+      major: this.agent.os.major,
     }
   }
 }
