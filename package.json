@@ -1,6 +1,8 @@
 {
   "name": "performance-metrics",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:ts": "tsc --watch",
