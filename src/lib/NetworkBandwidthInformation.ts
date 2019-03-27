@@ -17,12 +17,14 @@ class NetworkBandwidthInformation {
     const bandwidths: number[] = [];
     // @ts-ignore
     resources.forEach((entry: PerformanceResourceTiming) => {
-      const transferTime = entry.responseEnd - entry.responseStart;
-      const transferSize = entry.transferSize;
+      if (entry.transferSize) {
+        const transferTime = entry.responseEnd - entry.responseStart;
+        const transferSize = entry.transferSize;
 
-      const bpms = transferSize / transferTime;
+        const bpms = transferSize / transferTime;
 
-      bandwidths.push(bpms);
+        bandwidths.push(bpms);
+      }
     });
     this.bandwidths = bandwidths;
     this.getAverageBandwidth();
