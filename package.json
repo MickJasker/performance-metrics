@@ -1,6 +1,6 @@
 {
   "name": "performance-data",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -16,7 +16,8 @@
   "license": "MIT",
   "repository": "https://github.com/MickJasker/performance-metrics",
   "dependencies": {
-    "@babel/polyfill": "^7.4.0"
+    "@babel/polyfill": "^7.4.0",
+    "useragent": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -42,7 +43,6 @@
     "tslint": "^5.14.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.4000",
-    "useragent": "^2.3.0"
+    "typescript": "^3.3.4000"
   }
 }
