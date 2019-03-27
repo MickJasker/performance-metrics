@@ -77,3 +77,22 @@ describe('OS information with provided UA', () => {
     expect(deviceSpecs.getOperatingSystem().major).toBe('10')
   });
 });
+
+describe('Device information with navigator.useragent', () => {
+  beforeEach(() => {
+    jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue('Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1');
+    deviceSpecs = new DeviceSpecifications()
+  });
+  test('Return the browser name', () => {
+    expect(deviceSpecs.getDevice().name).toBe('iPhone')
+  });
+});
+
+describe('Device information with provided UA', () => {
+  beforeEach(() => {
+    deviceSpecs = new DeviceSpecifications('Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1')
+  });
+  test('Return the browser name', () => {
+    expect(deviceSpecs.getDevice().name).toBe('iPhone')
+  });
+});

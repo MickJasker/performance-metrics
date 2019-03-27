@@ -2,16 +2,20 @@ import * as useragent from 'useragent';
 // tslint:disable-next-line:no-duplicate-imports
 import Useragent from 'useragent';
 
-interface Browser {
+interface IBrowser {
   name: string;
   version: string;
   major: string;
 }
 
-interface OS {
+interface IOS {
   name: string;
   version: string;
   major: string;
+}
+
+interface IDevice {
+  name: string;
 }
 
 /**
@@ -34,7 +38,7 @@ class DeviceSpecifications {
     }
   }
 
-  public getBrowser(): Browser {
+  public getBrowser(): IBrowser {
     return {
       name: this.agent.family,
       version: `${this.agent.major}.${this.agent.major}.${this.agent.patch}`,
@@ -42,11 +46,17 @@ class DeviceSpecifications {
     }
   }
 
-  public getOperatingSystem(): OS {
+  public getOperatingSystem(): IOS {
     return {
       name: this.agent.os.family,
       version: `${this.agent.os.major}.${this.agent.os.minor}.${this.agent.os.patch}`,
       major: this.agent.os.major,
+    }
+  }
+  
+  public getDevice(): IDevice {
+    return {
+      name: this.agent.device.family,
     }
   }
 }

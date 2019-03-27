@@ -1,21 +1,27 @@
-interface Browser {
+interface IBrowser {
   name: string;
   version: string;
   major: string;
 }
 
-interface OS {
+interface IOS {
   name: string;
   version: string;
   major: string;
+}
+
+interface IDevice {
+  name: string;
 }
 
 interface IDeviceSpecifications {
   userAgentString: string;
 
-  getBrowser(): Browser;
+  getBrowser(): IBrowser;
 
-  getOperatingSystem(): OS;
+  getOperatingSystem(): IOS;
+
+  getDevice(): IDevice;
 }
 
 export default IDeviceSpecifications;
