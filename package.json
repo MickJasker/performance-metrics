@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
-    "dev:babel": "babel ./src --out-dir lib --extensions \".ts,.tsx\" --watch",
     "dev:ts": "tsc --watch",
-    "build": "babel ./src --out-dir lib --extensions \".ts,.tsx\" && tsc",
+    "dev:babel": "babel ./lib --out-dir lib --extensions \".js,.jsx\" --watch",
+    "build": "tsc && babel ./lib --out-dir lib --extensions \".js,.jsx\"",
     "test": "jest",
     "test:dev": "jest --watchAll"
   },
@@ -15,9 +15,12 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.11",
+    "@types/useragent": "^2.1.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -33,6 +36,7 @@
     "tslint": "^5.14.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "useragent": "^2.3.0"
   }
 }
