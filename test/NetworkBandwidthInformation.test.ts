@@ -14,7 +14,7 @@ describe('Get network bandwidths', () => {
       responseStart: 0,
       responseEnd: 980,
       transferSize: 1024000,
-    }]);
+    },{}]);
     networkBandwidthInformation = new NetworkBandwidthInformation;
   });
   test('it should return an array of all bandwidths', () => {
@@ -33,6 +33,8 @@ describe('Get average network bandwidths', () => {
       responseStart: 0,
       responseEnd: 980,
       transferSize: 1024000,
+    },{
+
     }]);
     networkBandwidthInformation = new NetworkBandwidthInformation;
   });
