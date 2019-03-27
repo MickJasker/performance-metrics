@@ -1,3 +1,8 @@
+/**
+ * @namespace NetworkBandwidthInformation
+ * @class NetworkBandwidthInformation
+ * @constructor
+ */
 class NetworkBandwidthInformation {
   public bandwidths: number[];
   public averageBandwidth: number;
