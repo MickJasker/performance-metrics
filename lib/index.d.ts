@@ -1,4 +1,2 @@
-declare class Class {
-    getData(): string;
-}
-export default Class;
+import DeviceSpecifications from './lib/DeviceSpecifications';
+export { DeviceSpecifications };
