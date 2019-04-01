@@ -1,7 +1,7 @@
 import * as useragent from 'useragent';
 // tslint:disable-next-line:no-duplicate-imports
 import Useragent from 'useragent';
-import IDeviceSpecifications from "./IDeviceSpecifications";
+import IDeviceSpecifications from "./interfaces/IDeviceSpecifications";
 
 interface IBrowser {
   name: string;
