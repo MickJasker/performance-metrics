@@ -1,18 +1,50 @@
-interface Browser {
+import IDeviceSpecifications from "./IDeviceSpecifications";
+interface IBrowser {
     name: string;
     version: string;
     major: string;
+}
+interface IOS {
+    name: string;
+    version: string;
+    major: string;
+}
+interface IDevice {
+    name: string;
 }
 /**
  * @namespace DeviceSpecifications
  * @class DeviceSpecifications
  * @constructor
+ * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
  */
-declare class DeviceSpecifications {
+declare class DeviceSpecifications implements IDeviceSpecifications {
     private agent;
     /** Returns the used useragent */
     readonly userAgentString: string;
     constructor(UserAgentString?: string);
-    getBrowser(): Browser;
+    /**
+     * Returns information about the browser
+     *
+     * @method getBrowser
+     * @return {IBrowser}
+     */
+    getBrowser(): IBrowser;
+    /**
+     * Returns information about the operating system
+     *
+     * @method getOperatingSystem
+     * @return {IOS}
+     */
+    getOperatingSystem(): IOS;
+    /**
+     * Returns information about the device.
+     *
+     * Only works on mobile devices.
+     *
+     * @method getDevice
+     * @return {IDevice}
+     */
+    getDevice(): IDevice;
 }
 export default DeviceSpecifications;

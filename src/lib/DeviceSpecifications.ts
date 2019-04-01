@@ -1,6 +1,7 @@
 import * as useragent from 'useragent';
 // tslint:disable-next-line:no-duplicate-imports
 import Useragent from 'useragent';
+import IDeviceSpecifications from "./interfaces/IDeviceSpecifications";
 
 interface IBrowser {
   name: string;
@@ -22,8 +23,9 @@ interface IDevice {
  * @namespace DeviceSpecifications
  * @class DeviceSpecifications
  * @constructor
+ * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
  */
-class DeviceSpecifications {
+class DeviceSpecifications implements IDeviceSpecifications{
   private agent: Useragent.Agent;
   /** Returns the used useragent */
   public readonly userAgentString: string;
@@ -38,6 +40,12 @@ class DeviceSpecifications {
     }
   }
 
+  /**
+   * Returns information about the browser
+   *
+   * @method getBrowser
+   * @return {IBrowser}
+   */
   public getBrowser(): IBrowser {
     return {
       name: this.agent.family,
@@ -46,6 +54,12 @@ class DeviceSpecifications {
     }
   }
 
+  /**
+   * Returns information about the operating system
+   *
+   * @method getOperatingSystem
+   * @return {IOS}
+   */
   public getOperatingSystem(): IOS {
     return {
       name: this.agent.os.family,
@@ -53,7 +67,15 @@ class DeviceSpecifications {
       major: this.agent.os.major,
     }
   }
-  
+
+  /**
+   * Returns information about the device.
+   *
+   * Only works on mobile devices.
+   *
+   * @method getDevice
+   * @return {IDevice}
+   */
   public getDevice(): IDevice {
     return {
       name: this.agent.device.family,
