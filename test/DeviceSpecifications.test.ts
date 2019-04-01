@@ -1,5 +1,5 @@
 import DeviceSpecifications from '../src/lib/DeviceSpecifications';
-import IDeviceSpecifications from '../src/lib/IDeviceSpecifications';
+import IDeviceSpecifications from '../src/lib/interfaces/IDeviceSpecifications';
 
 let deviceSpecs: IDeviceSpecifications;
 

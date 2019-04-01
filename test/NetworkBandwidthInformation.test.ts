@@ -1,5 +1,5 @@
 import NetworkBandwidthInformation from '../src/lib/NetworkBandwidthInformation';
-import INetworkBandwidthInformation from '../src/lib/INetworkBandwidthInformation';
+import INetworkBandwidthInformation from '../src/lib/interfaces/INetworkBandwidthInformation';
 
 let networkBandwidthInformation: INetworkBandwidthInformation;
 
