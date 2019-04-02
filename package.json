@@ -1,6 +1,6 @@
 {
-  "name": "performance-data",
-  "version": "0.1.5",
+  "name": "device-performance-metrics",
+  "version": "1.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -17,6 +17,8 @@
   "repository": "https://github.com/MickJasker/performance-metrics",
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
+    "browserslist-useragent": "^3.0.0",
+    "fps-emitter": "^1.0.0",
     "useragent": "^2.3.0"
   },
   "devDependencies": {
@@ -26,6 +28,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/browserslist-useragent": "^3.0.0",
     "@types/jest": "^24.0.11",
     "@types/useragent": "^2.1.1",
     "babel-eslint": "^10.0.1",

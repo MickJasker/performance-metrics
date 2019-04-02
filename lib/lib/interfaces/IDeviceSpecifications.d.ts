@@ -11,18 +11,9 @@ interface IOS {
 interface IDevice {
     name: string;
 }
-/**
- * @namespace DeviceSpecifications
- * @class DeviceSpecifications
- * @constructor
- * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
- */
-declare class DeviceSpecifications {
-    private _agent;
+interface IDeviceSpecifications {
     /** Returns the used useragent */
-    readonly userAgentString: string;
-    private readonly _browsersList;
-    constructor(UserAgentString?: string, browserslist?: string[]);
+    userAgentString: string;
     /**
      * Returns information about the browser
      *
@@ -56,4 +47,4 @@ declare class DeviceSpecifications {
      */
     isBrowserModern(): boolean;
 }
-export default DeviceSpecifications;
+export default IDeviceSpecifications;
