@@ -1,6 +1,6 @@
 {
-  "name": "performance-data",
-  "version": "0.1.5",
+  "name": "device-performance-metrics",
+  "version": "1.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
