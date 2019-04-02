@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DeviceSpecifications | performance-metrics</title>
+	<title>DeviceSpecifications | device-performance-metrics</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">performance-metrics</a>
+					<a href="../index.html" class="title">device-performance-metrics</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -91,12 +91,6 @@
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/idevicespecifications.html" class="tsd-signature-type">IDeviceSpecifications</a></li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -110,7 +104,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="devicespecifications.html#agent" class="tsd-kind-icon">agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="devicespecifications.html#_agent" class="tsd-kind-icon">_agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="devicespecifications.html#_browserslist" class="tsd-kind-icon">_browsers<wbr>List</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="devicespecifications.html#useragentstring" class="tsd-kind-icon">user<wbr>Agent<wbr>String</a></li>
 							</ul>
 						</section>
@@ -120,6 +115,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="devicespecifications.html#getbrowser" class="tsd-kind-icon">get<wbr>Browser</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="devicespecifications.html#getdevice" class="tsd-kind-icon">get<wbr>Device</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="devicespecifications.html#getoperatingsystem" class="tsd-kind-icon">get<wbr>Operating<wbr>System</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="devicespecifications.html#isbrowsermodern" class="tsd-kind-icon">is<wbr>Browser<wbr>Modern</a></li>
 							</ul>
 						</section>
 					</div>
@@ -131,19 +127,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Device<wbr>Specifications<span class="tsd-signature-symbol">(</span>UserAgentString<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="devicespecifications.html" class="tsd-signature-type">DeviceSpecifications</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Device<wbr>Specifications<span class="tsd-signature-symbol">(</span>UserAgentString<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, browserslist<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="devicespecifications.html" class="tsd-signature-type">DeviceSpecifications</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L31">lib/DeviceSpecifications.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L32">lib/DeviceSpecifications.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> UserAgentString: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> browserslist: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="devicespecifications.html" class="tsd-signature-type">DeviceSpecifications</a></h4>
@@ -154,12 +153,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="agent" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> agent</h3>
-					<div class="tsd-signature tsd-kind-icon">agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Agent</span></div>
+					<a name="_agent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _agent</h3>
+					<div class="tsd-signature tsd-kind-icon">_agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Agent</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L29">lib/DeviceSpecifications.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L29">lib/DeviceSpecifications.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_browserslist" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _browsers<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">_browsers<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L32">lib/DeviceSpecifications.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,9 +177,8 @@
 					<h3>user<wbr>Agent<wbr>String</h3>
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<wbr>String<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/idevicespecifications.html">IDeviceSpecifications</a>.<a href="../interfaces/idevicespecifications.html#useragentstring">userAgentString</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L31">lib/DeviceSpecifications.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L31">lib/DeviceSpecifications.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,14 +194,13 @@
 					<a name="getbrowser" class="tsd-anchor"></a>
 					<h3>get<wbr>Browser</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Browser<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IBrowser</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Browser<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ibrowser.html" class="tsd-signature-type">IBrowser</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/idevicespecifications.html">IDeviceSpecifications</a>.<a href="../interfaces/idevicespecifications.html#getbrowser">getBrowser</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L49">lib/DeviceSpecifications.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L60">lib/DeviceSpecifications.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -206,7 +213,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IBrowser</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ibrowser.html" class="tsd-signature-type">IBrowser</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -214,14 +221,13 @@
 					<a name="getdevice" class="tsd-anchor"></a>
 					<h3>get<wbr>Device</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Device<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDevice</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Device<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/idevice.html" class="tsd-signature-type">IDevice</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/idevicespecifications.html">IDeviceSpecifications</a>.<a href="../interfaces/idevicespecifications.html#getdevice">getDevice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L79">lib/DeviceSpecifications.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L90">lib/DeviceSpecifications.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +241,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDevice</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/idevice.html" class="tsd-signature-type">IDevice</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -243,14 +249,13 @@
 					<a name="getoperatingsystem" class="tsd-anchor"></a>
 					<h3>get<wbr>Operating<wbr>System</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Operating<wbr>System<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IOS</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Operating<wbr>System<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ios.html" class="tsd-signature-type">IOS</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/idevicespecifications.html">IDeviceSpecifications</a>.<a href="../interfaces/idevicespecifications.html#getoperatingsystem">getOperatingSystem</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/3f2dcfd/src/lib/DeviceSpecifications.ts#L63">lib/DeviceSpecifications.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L74">lib/DeviceSpecifications.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,7 +268,35 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IOS</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ios.html" class="tsd-signature-type">IOS</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isbrowsermodern" class="tsd-anchor"></a>
+					<h3>is<wbr>Browser<wbr>Modern</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Browser<wbr>Modern<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/7271d83/src/lib/DeviceSpecifications.ts#L104">lib/DeviceSpecifications.ts:104</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns if the browser is modern.</p>
+								</div>
+								<p>Warning: this is general detection if the browser is a modern browser, it is not a replacement of feature detection libraries like mordernizer.</p>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>isBrowserModern</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -288,7 +321,10 @@
 								<a href="devicespecifications.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="devicespecifications.html#agent" class="tsd-kind-icon">agent</a>
+								<a href="devicespecifications.html#_agent" class="tsd-kind-icon">_agent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="devicespecifications.html#_browserslist" class="tsd-kind-icon">_browsers<wbr>List</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="devicespecifications.html#useragentstring" class="tsd-kind-icon">user<wbr>Agent<wbr>String</a>
@@ -302,10 +338,16 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="devicespecifications.html#getoperatingsystem" class="tsd-kind-icon">get<wbr>Operating<wbr>System</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="devicespecifications.html#isbrowsermodern" class="tsd-kind-icon">is<wbr>Browser<wbr>Modern</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="fpscounter.html" class="tsd-kind-icon">FPSCounter</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="networkbandwidthinformation.html" class="tsd-kind-icon">Network<wbr>Bandwidth<wbr>Information</a>
 					</li>
@@ -320,6 +362,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/idevicespecifications.html" class="tsd-kind-icon">IDevice<wbr>Specifications</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ifpscounter.html" class="tsd-kind-icon">IFPSCounter</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/inetworkbandwidthinformation.html" class="tsd-kind-icon">INetwork<wbr>Bandwidth<wbr>Information</a>
