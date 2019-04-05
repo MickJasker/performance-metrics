@@ -1,5 +1,5 @@
 interface INetworkBandwidthInformation {
-  bandwidths: number[]
+  bandwidths: number[];
   averageBandwidth: number;
 
   getBandwidths(): number[];
