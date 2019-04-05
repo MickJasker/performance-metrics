@@ -71,10 +71,37 @@
 				<p><code>$ yarn test:dev</code> to watch tests</p>
 				<p><code>$ yarn build</code> to build the code to the <code>/lib</code> folder.</p>
 				<p><code>$ yarn doc</code> to generated documentation in the <code>./docs</code> folder</p>
-				<p>##Documentation
-				The documetation can be found here.</p>
-				<p>##Contribution
-				TODO</p>
+				<h2 id="usage">Usage</h2>
+				<h3 id="installation">Installation</h3>
+				<p>To install the library run <code>$ yarn add device-performance-metrics</code> in the root of your project.</p>
+				<h3 id="example-usage">Example usage</h3>
+				<p>Importing the library globally:</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> PerformanceMetrics <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+
+<span class="hljs-keyword">const</span> performanceMetrics: PerformanceMetrics = <span class="hljs-keyword">new</span> PerformanceMetrics();
+
+<span class="hljs-keyword">const</span> browser = performanceMetrics.deviceSpecifications.getBrowser();
+
+<span class="hljs-keyword">const</span> fps = performanceMetrics.fpscounter.fps;
+
+<span class="hljs-keyword">const</span> bandwidth = performanceMetrics.networkBandwidtInformation.getAverageBandwidth();</code></pre>
+				<p>Or tree shake the library:</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DeviceSpecifications } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+<span class="hljs-keyword">import</span> { NetworkBandwidthInformation } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+<span class="hljs-keyword">import</span> { FPSCounter } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+
+<span class="hljs-keyword">const</span> deviceSpecs = <span class="hljs-keyword">new</span> DeviceSpecifications();
+<span class="hljs-keyword">const</span> browser =  deviceSpecs.getBrowser();
+
+<span class="hljs-keyword">const</span> networkBandwidth = <span class="hljs-keyword">new</span> NetworkBandwidthInformation();
+<span class="hljs-keyword">const</span> avgBandwidth = networkBandwidth.getAverageBandwidth();
+
+<span class="hljs-keyword">const</span> fpsCounter = <span class="hljs-keyword">new</span> FPSCounter();
+<span class="hljs-keyword">const</span> fps = fpsCounter.fps</code></pre>
+				<h3 id="typedoc">Typedoc</h3>
+				<p>Detailed information about all propterties, methods, etc. can be found in the <a href="https://mickjasker.github.io/performance-metrics/">typedoc</a>.</p>
+				<h2 id="contribution">Contribution</h2>
+				<p>TODO</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
