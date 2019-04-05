@@ -33,7 +33,11 @@ class DeviceSpecifications {
   public readonly userAgentString: string;
 
   private readonly _browsersList: string[];
-
+  /**
+   * @constructor
+   * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
+   * @param {string[]} browserslist Provide a `string[]` of a browserslist to manually overide the default value: `['last 5 versions', '> 3%', 'not ie <= 11']`
+   */
   constructor(UserAgentString?: string, browserslist?: string[]) {
     if (UserAgentString) {
       this._agent = useragent.parse(UserAgentString);
@@ -105,7 +109,7 @@ class DeviceSpecifications {
    * Warning: this is general detection if the browser is a modern browser, it is not a replacement of feature detection libraries like mordernizer.
    *
    * @method isBrowserModern
-   * @return {IDevice}
+   * @return {boolean}
    */
   public isBrowserModern(): boolean {
     return matchesUA(this.userAgentString, {
