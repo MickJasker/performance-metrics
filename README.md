@@ -1,4 +1,10 @@
 # Performance metrics
+![npm](https://img.shields.io/npm/v/device-performance-metrics.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/min/device-performance-metrics.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/device-performance-metrics.svg)
+![GitHub](https://img.shields.io/github/license/MickJasker/performance-metrics.svg)
+![npm](https://img.shields.io/npm/dt/device-performance-metrics.svg)
+
 This project uses yarn. Do not use npm if you wish to contribute to this project!
 
 `$ yarn`
