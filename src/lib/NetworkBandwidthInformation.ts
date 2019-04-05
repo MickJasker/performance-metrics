@@ -36,7 +36,7 @@ class NetworkBandwidthInformation {
     const sum = bandwidths.reduce((previous, current) => {
       const val = current + previous;
       return val;
-    })
+    });
     const avg = sum / bandwidths.length;
     this.averageBandwidth = avg;
     return avg;
