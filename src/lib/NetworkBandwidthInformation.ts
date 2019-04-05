@@ -1,3 +1,8 @@
+/**
+ * @namespace NetworkBandwidthInformation
+ * @class NetworkBandwidthInformation
+ * @constructor
+ */
 class NetworkBandwidthInformation {
   public bandwidths: number[];
   public averageBandwidth: number;
@@ -12,12 +17,14 @@ class NetworkBandwidthInformation {
     const bandwidths: number[] = [];
     // @ts-ignore
     resources.forEach((entry: PerformanceResourceTiming) => {
-      const transferTime = entry.responseEnd - entry.responseStart;
-      const transferSize = entry.transferSize;
+      if (entry.transferSize) {
+        const transferTime = entry.responseEnd - entry.responseStart;
+        const transferSize = entry.transferSize;
 
-      const bpms = transferSize / transferTime;
+        const bpms = transferSize / transferTime;
 
-      bandwidths.push(bpms);
+        bandwidths.push(bpms);
+      }
     });
     this.bandwidths = bandwidths;
     this.getAverageBandwidth();
@@ -29,7 +36,7 @@ class NetworkBandwidthInformation {
     const sum = bandwidths.reduce((previous, current) => {
       const val = current + previous;
       return val;
-    })
+    });
     const avg = sum / bandwidths.length;
     this.averageBandwidth = avg;
     return avg;

@@ -1,5 +1,5 @@
 import DeviceSpecifications from '../src/lib/DeviceSpecifications';
-import IDeviceSpecifications from '../src/lib/IDeviceSpecifications';
+import IDeviceSpecifications from '../src/lib/interfaces/IDeviceSpecifications';
 
 let deviceSpecs: IDeviceSpecifications;
 
@@ -94,5 +94,32 @@ describe('Device information with provided UA', () => {
   });
   test('Return the browser name', () => {
     expect(deviceSpecs.getDevice().name).toBe('iPhone')
+  });
+});
+
+describe('Setting browserslist', () => {
+  beforeEach(() => {
+    deviceSpecs = new DeviceSpecifications('Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1')
+  });
+  test('return if the browser is modern', () => {
+    expect(deviceSpecs.isBrowserModern()).toEqual(true);
+  });
+});
+
+describe('Setting browserslist', () => {
+  beforeEach(() => {
+    deviceSpecs = new DeviceSpecifications('Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko')
+  });
+  test('return if the browser is modern', () => {
+    expect(deviceSpecs.isBrowserModern()).toEqual(false);
+  });
+});
+
+describe('Setting browserslist', () => {
+  beforeEach(() => {
+    deviceSpecs = new DeviceSpecifications('Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1', ['Firefox > 10'])
+  });
+  test('return if the browser is modern', () => {
+    expect(deviceSpecs.isBrowserModern()).toEqual(false);
   });
 });

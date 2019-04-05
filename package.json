@@ -1,16 +1,25 @@
 {
-  "name": "performance-metrics",
-  "version": "1.0.0",
+  "name": "device-performance-metrics",
+  "version": "1.0.3",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:ts": "tsc --watch",
     "dev:babel": "babel ./lib --out-dir lib --extensions \".js,.jsx\" --watch",
     "build": "tsc && babel ./lib --out-dir lib --extensions \".js,.jsx\"",
     "test": "jest",
-    "test:dev": "jest --watchAll"
+    "test:dev": "jest --watchAll",
+    "doc": "npm-run-all -p doc:*",
+    "doc:typedoc": "typedoc --out docs/ src/ --mode file"
   },
+  "license": "MIT",
+  "repository": "https://github.com/MickJasker/performance-metrics",
   "dependencies": {
-    "@babel/polyfill": "^7.4.0"
+    "@babel/polyfill": "^7.4.0",
+    "browserslist-useragent": "^3.0.0",
+    "fps-emitter": "^1.0.0",
+    "useragent": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -19,6 +28,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/browserslist-useragent": "^3.0.0",
     "@types/jest": "^24.0.11",
     "@types/useragent": "^2.1.1",
     "babel-eslint": "^10.0.1",
@@ -36,7 +46,6 @@
     "tslint": "^5.14.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.4000",
-    "useragent": "^2.3.0"
+    "typescript": "^3.3.4000"
   }
 }
