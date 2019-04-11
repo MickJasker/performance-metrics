@@ -8,7 +8,7 @@
     "strict": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    "outDir": "lib",
+    "outDir": "./",
     "lib": [
       "DOM",
       "DOM.Iterable",
