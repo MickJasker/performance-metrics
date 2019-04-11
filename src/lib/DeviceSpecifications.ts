@@ -22,8 +22,9 @@ interface IDevice {
 /**
  * @namespace DeviceSpecifications
  * @class DeviceSpecifications
- * @constructor
+ *
  * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
+ *
  * @param {string[]} browserslist Provide a `string[]` of a browserslist to manually overide the default value: `['last 5 versions', '> 3%', 'not ie <= 11']`
  */
 class DeviceSpecifications {
@@ -33,8 +34,8 @@ class DeviceSpecifications {
   public readonly userAgentString: string;
 
   private readonly _browsersList: string[];
+
   /**
-   * @constructor
    * @param {string} UserAgentString Provide a user agent, if none is provided `navigator.useragent` will be used by default.
    * @param {string[]} browserslist Provide a `string[]` of a browserslist to manually overide the default value: `['last 5 versions', '> 3%', 'not ie <= 11']`
    */

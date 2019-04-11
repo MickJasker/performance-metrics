@@ -3,7 +3,6 @@ import FpsEmitter from 'fps-emitter';
 /**
  * @namespace FPSCounter
  * @class FPSCounter
- * @constructor
  * Get information about the device's framerate.
  */
 class FPSCounter {

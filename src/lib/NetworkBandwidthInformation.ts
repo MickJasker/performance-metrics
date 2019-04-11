@@ -1,19 +1,18 @@
 /**
  * @namespace NetworkBandwidthInformation
  * @class NetworkBandwidthInformation
- * @constructor
  * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
  */
 class NetworkBandwidthInformation {
   /** `number[]` containing all bandwidths. */
   public bandwidths: number[];
+
   /** Average of `bandwidths` property. */
   public averageBandwidth: number;
 
   private _minSize: number;
 
   /**
-   * @constructor
    * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
    */
   constructor(minimumFileSize?: number) {
@@ -27,10 +26,10 @@ class NetworkBandwidthInformation {
     this.averageBandwidth = this.getAverageBandwidth();
   }
 
-/**
- * Returns an array of all bandwidths.
- * @method getBandwidths
- */
+  /**
+   * Returns an array of all bandwidths.
+   * @method getBandwidths
+   */
   public getBandwidths(): number[] {
     const resources = window.performance.getEntries();
     const bandwidths: number[] = [];
