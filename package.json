@@ -1,13 +1,13 @@
 {
   "name": "device-performance-metrics",
-  "version": "1.0.3",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "version": "1.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:ts": "tsc --watch",
     "dev:babel": "babel ./lib --out-dir lib --extensions \".js,.jsx\" --watch",
-    "build": "tsc && babel ./lib --out-dir lib --extensions \".js,.jsx\"",
+    "build": "tsc && babel ./ --out-dir ./ --extensions \".js,.jsx\" --ignore \"**/node_modules\",\" */jest.config.js\", \"**/src\"",
     "test": "jest",
     "test:dev": "jest --watchAll",
     "doc": "npm-run-all -p doc:*",

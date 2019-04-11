@@ -75,8 +75,9 @@
 						<dt>class</dt>
 						<dd><p>NetworkBandwidthInformation</p>
 						</dd>
-						<dt>constructor</dt>
-						<dd></dd>
+						<dt>param</dt>
+						<dd><p>Provide the minimum file size of the files you want to get the bandwidth of.</p>
+						</dd>
 					</dl>
 				</div>
 			</section>
@@ -101,6 +102,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="networkbandwidthinformation.html#_minsize" class="tsd-kind-icon">_min<wbr>Size</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="networkbandwidthinformation.html#averagebandwidth" class="tsd-kind-icon">average<wbr>Bandwidth</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="networkbandwidthinformation.html#bandwidths" class="tsd-kind-icon">bandwidths</a></li>
 							</ul>
@@ -121,15 +123,28 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Network<wbr>Bandwidth<wbr>Information<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="networkbandwidthinformation.html" class="tsd-signature-type">NetworkBandwidthInformation</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Network<wbr>Bandwidth<wbr>Information<span class="tsd-signature-symbol">(</span>minimumFileSize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="networkbandwidthinformation.html" class="tsd-signature-type">NetworkBandwidthInformation</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/NetworkBandwidthInformation.ts#L8">lib/NetworkBandwidthInformation.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L13">lib/NetworkBandwidthInformation.ts:13</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> minimumFileSize: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Provide the minimum file size of the files you want to get the bandwidth of.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="networkbandwidthinformation.html" class="tsd-signature-type">NetworkBandwidthInformation</a></h4>
 						</li>
 					</ul>
@@ -137,15 +152,30 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_minsize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _min<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">_min<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L13">lib/NetworkBandwidthInformation.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="averagebandwidth" class="tsd-anchor"></a>
 					<h3>average<wbr>Bandwidth</h3>
 					<div class="tsd-signature tsd-kind-icon">average<wbr>Bandwidth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/NetworkBandwidthInformation.ts#L8">lib/NetworkBandwidthInformation.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L11">lib/NetworkBandwidthInformation.ts:11</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Average of <code>bandwidths</code> property.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="bandwidths" class="tsd-anchor"></a>
@@ -153,9 +183,14 @@
 					<div class="tsd-signature tsd-kind-icon">bandwidths<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/NetworkBandwidthInformation.ts#L7">lib/NetworkBandwidthInformation.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L8">lib/NetworkBandwidthInformation.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>number[]</code> containing all bandwidths.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -170,9 +205,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/NetworkBandwidthInformation.ts#L34">lib/NetworkBandwidthInformation.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L56">lib/NetworkBandwidthInformation.ts:56</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an average of <code>this.bandwidths</code></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>getAverageBandwidth</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
@@ -187,9 +232,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/NetworkBandwidthInformation.ts#L15">lib/NetworkBandwidthInformation.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/NetworkBandwidthInformation.ts#L33">lib/NetworkBandwidthInformation.ts:33</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array of all bandwidths.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>getBandwidths</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
@@ -207,6 +262,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="deviceperformancemetrics.html" class="tsd-kind-icon">Device<wbr>Performance<wbr>Metrics</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="devicespecifications.html" class="tsd-kind-icon">Device<wbr>Specifications</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -219,6 +277,9 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="networkbandwidthinformation.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="networkbandwidthinformation.html#_minsize" class="tsd-kind-icon">_min<wbr>Size</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="networkbandwidthinformation.html#averagebandwidth" class="tsd-kind-icon">average<wbr>Bandwidth</a>
@@ -236,9 +297,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="performancemetrics.html" class="tsd-kind-icon">Performance<wbr>Metrics</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="../interfaces/ibrowser.html" class="tsd-kind-icon">IBrowser</a>
 					</li>

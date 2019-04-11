@@ -95,9 +95,22 @@
 					<div class="tsd-signature tsd-kind-icon">fps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/interfaces/IFPSCounter.ts#L2">lib/interfaces/IFPSCounter.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/interfaces/IFPSCounter.ts#L15">lib/interfaces/IFPSCounter.ts:15</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The device&#39;s current FPS, to get a realtime reading get this value from a <code>setInterval()</code> function.</p>
+						</div>
+						<h3 id="example-">Example:</h3>
+						<pre><code class="language-typescript"><span class="hljs-keyword">const</span> fpscounter = <span class="hljs-keyword">new</span> FPSCounter();
+
+<span class="hljs-comment">// Log the current FPS to the console every 500ms.</span>
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The current FPS is <span class="hljs-subst">${fpscounter.fps}</span>FPS`</span>)
+}, <span class="hljs-number">500</span>);
+<span class="hljs-comment">// Example log could be: 'The current FPS is 60FPS'</span></code></pre>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -112,6 +125,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="../classes/deviceperformancemetrics.html" class="tsd-kind-icon">Device<wbr>Performance<wbr>Metrics</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="../classes/devicespecifications.html" class="tsd-kind-icon">Device<wbr>Specifications</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -119,9 +135,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="../classes/networkbandwidthinformation.html" class="tsd-kind-icon">Network<wbr>Bandwidth<wbr>Information</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/performancemetrics.html" class="tsd-kind-icon">Performance<wbr>Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="ibrowser.html" class="tsd-kind-icon">IBrowser</a>
