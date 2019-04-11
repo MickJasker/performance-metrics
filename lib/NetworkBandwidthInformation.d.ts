@@ -1,7 +1,6 @@
 /**
  * @namespace NetworkBandwidthInformation
  * @class NetworkBandwidthInformation
- * @constructor
  * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
  */
 declare class NetworkBandwidthInformation {
@@ -11,7 +10,6 @@ declare class NetworkBandwidthInformation {
     averageBandwidth: number;
     private _minSize;
     /**
-     * @constructor
      * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
      */
     constructor(minimumFileSize?: number);

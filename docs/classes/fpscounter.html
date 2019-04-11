@@ -66,6 +66,19 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>namespace</dt>
+						<dd><p>FPSCounter</p>
+						</dd>
+						<dt>class</dt>
+						<dd><p>FPSCounter
+							Get information about the device&#39;s framerate.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -106,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/e179371/src/lib/FPSCounter.ts#L5">lib/FPSCounter.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/FPSCounter.ts#L24">lib/FPSCounter.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="fpscounter.html" class="tsd-signature-type">FPSCounter</a></h4>
@@ -122,7 +135,7 @@
 					<div class="tsd-signature tsd-kind-icon">_fps<wbr>Emitter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/e179371/src/lib/FPSCounter.ts#L4">lib/FPSCounter.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/FPSCounter.ts#L9">lib/FPSCounter.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -132,9 +145,22 @@
 					<div class="tsd-signature tsd-kind-icon">fps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/e179371/src/lib/FPSCounter.ts#L5">lib/FPSCounter.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/95da25f/src/lib/FPSCounter.ts#L24">lib/FPSCounter.ts:24</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The device&#39;s current FPS, to get a realtime reading get this value from a <code>setInterval()</code> function.</p>
+						</div>
+						<h3 id="example-">Example:</h3>
+						<pre><code class="language-typescript"><span class="hljs-keyword">const</span> fpscounter = <span class="hljs-keyword">new</span> FPSCounter();
+
+<span class="hljs-comment">// Log the current FPS to the console every 500ms.</span>
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The current FPS is <span class="hljs-subst">${fpscounter.fps}</span>FPS`</span>)
+}, <span class="hljs-number">500</span>);
+<span class="hljs-comment">// Example log could be: 'The current FPS is 60FPS'</span></code></pre>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -148,6 +174,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="deviceperformancemetrics.html" class="tsd-kind-icon">Device<wbr>Performance<wbr>Metrics</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="devicespecifications.html" class="tsd-kind-icon">Device<wbr>Specifications</a>
 					</li>
@@ -171,9 +200,6 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="networkbandwidthinformation.html" class="tsd-kind-icon">Network<wbr>Bandwidth<wbr>Information</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="performancemetrics.html" class="tsd-kind-icon">Performance<wbr>Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="../interfaces/ibrowser.html" class="tsd-kind-icon">IBrowser</a>
