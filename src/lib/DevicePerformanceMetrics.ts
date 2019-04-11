@@ -1,15 +1,17 @@
 import DeviceSpecifications from './DeviceSpecifications';
 import IDeviceSpecifications from './interfaces/IDeviceSpecifications';
 
-import NetworkBandwidthInformation from "./NetworkBandwidthInformation";
-import INetworkBandwidthInformation from "./interfaces/INetworkBandwidthInformation";
+import NetworkBandwidthInformation from './NetworkBandwidthInformation';
+import INetworkBandwidthInformation from './interfaces/INetworkBandwidthInformation';
 
 import FPSCounter from './FPSCounter';
 import IFPSCounter from './interfaces/IFPSCounter';
 
-class PerformanceMetrics {
+class DevicePerformanceMetrics {
   public deviceSpecifications: IDeviceSpecifications;
+
   public networkBandwidthInformation: INetworkBandwidthInformation;
+
   public fpsCounter: IFPSCounter;
 
   constructor() {
@@ -19,4 +21,4 @@ class PerformanceMetrics {
   }
 }
 
-export default PerformanceMetrics
+export default DevicePerformanceMetrics;
