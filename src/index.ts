@@ -1,7 +1,8 @@
 import DeviceSpecifications from './lib/DeviceSpecifications';
 import NetworkBandwidthInformation from './lib/NetworkBandwidthInformation';
-import PerformanceMetrics from './lib/PerformanceMetrics';
+import DevicePerformanceMetrics from './lib/DevicePerformanceMetrics';
+import FPSCounter from './lib/FPSCounter';
 
-export {DeviceSpecifications, NetworkBandwidthInformation};
+export { DeviceSpecifications, NetworkBandwidthInformation, FPSCounter };
 
-export default PerformanceMetrics;
+export default DevicePerformanceMetrics;
