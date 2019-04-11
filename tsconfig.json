@@ -8,13 +8,14 @@
     "strict": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    "outDir": "./",
+    "outDir": "./tmp",
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ES2018"
     ],
-    "declaration": true
+    "declaration": true,
+    "declarationDir": "./"
   },
   "include": [
     "src"
