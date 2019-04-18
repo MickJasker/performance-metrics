@@ -51,9 +51,8 @@ The class `DeviceSpecifications` gives you the ability to get basic specificatio
 
 ```typescript
 import { DeviceSpecifications } from 'device-performance-metrics';
-import IDeviceSpecifications from 'device-performance-metrics/interfaces';
 
-const deviceSpecs: IDeviceSpecifications = new DeviceSpecifications();
+const deviceSpecs: DeviceSpecifications = new DeviceSpecifications();
 
 const browser = deviceSpecs.getBrowser();
 
@@ -74,9 +73,8 @@ If you need to get information about the bandwidth you can use the `NetworkBandw
 
 ```typescript
 import { NetworkBandwidthInformation } from 'device-performance-metrics';
-import INetworkBandwidthInformation from 'device-performance-metrics/interfaces';
 
-const networkInfo: INetworkBandwidthInformation = new NetworkBandwidthInformation();
+const networkInfo: NetworkBandwidthInformation = new NetworkBandwidthInformation();
 
 // Logs an array of all measured bandwidths found when the class is contstructed
 console.log(networkInfo.bandwidths);
@@ -84,12 +82,12 @@ console.log(networkInfo.bandwidths);
 
 // Logs an avaerge of all measured bandwidths found when the class is contstructed
 console.log(`${networkInfo.averageBandwidth}bps`);
-// example log: 3973bps
+// example log: 3973bpms
 
 // Because the above values are made when the class is contstructed you also directly trigger the functions that get the data, for example:
 
 console.log(networkInfo.getAverageBandwidth());
-// example log: 4264bps
+// example log: 4264bpms
 ```
 
 ### FPS
@@ -97,9 +95,8 @@ The `FPSCounter` class gives you the ability to get the current framerate.
 
 ```typescript
 import { FPSCounter } from 'device-performance-metrics';
-import IFPSCounter from 'device-performance-metrics/interfaces';
 
-const fpsCounter: IFPSCounter = new FPSCounter();
+const fpsCounter: FPSCounter = new FPSCounter();
 
 // Logs the current FPS
 console.log(`${fpsCounter.fps}fps`)
