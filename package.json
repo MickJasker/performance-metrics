@@ -1,6 +1,6 @@
 {
   "name": "device-performance-metrics",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -21,7 +21,8 @@
     "@babel/polyfill": "^7.4.0",
     "browserslist-useragent": "^3.0.0",
     "fps-emitter": "^1.0.0",
-    "useragent": "^2.3.0"
+    "useragent": "^2.3.0",
+    "yamlparser": "^0.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
