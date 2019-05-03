@@ -7,11 +7,8 @@ class NetworkBandwidthInformation {
     /**
      * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
      */
-    constructor(minimumFileSize) {
-        this._minSize = 0;
-        if (minimumFileSize) {
-            this._minSize = minimumFileSize;
-        }
+    constructor(minimumFileSize = 0) {
+        this._minSize = minimumFileSize;
         this.bandwidths = this.getBandwidths();
         this.averageBandwidth = this.getAverageBandwidth();
     }
@@ -21,15 +18,15 @@ class NetworkBandwidthInformation {
      */
     getBandwidths() {
         const resources = window.performance.getEntries();
-        const bandwidths = [];
-        // @ts-ignore
-        resources.forEach((entry) => {
-            if (entry.transferSize && entry.transferSize > this._minSize) {
-                const transferTime = entry.responseEnd - entry.responseStart;
-                const { transferSize } = entry;
-                const bpms = transferSize / transferTime;
-                bandwidths.push(bpms);
-            }
+        const bandwidths = resources
+            // @ts-ignore
+            .filter((entry) => {
+            return entry.transferSize && entry.transferSize > this._minSize;
+        })
+            .map((entry) => {
+            const transferTime = entry.responseEnd - entry.responseStart;
+            const { transferSize } = entry;
+            return transferSize / transferTime;
         });
         this.bandwidths = bandwidths;
         this.getAverageBandwidth();
