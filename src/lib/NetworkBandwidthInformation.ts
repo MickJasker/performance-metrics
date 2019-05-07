@@ -15,7 +15,7 @@ class NetworkBandwidthInformation {
   /**
    * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
    */
-  constructor(minimumFileSize: number = 0) {
+  constructor(minimumFileSize: number = 10) {
     this._minSize = minimumFileSize;
 
     this.bandwidths = this.getBandwidths();
