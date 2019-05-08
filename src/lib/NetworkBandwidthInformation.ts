@@ -5,10 +5,10 @@
  */
 class NetworkBandwidthInformation {
   /** `number[]` containing all bandwidths. */
-  public bandwidths: number[];
+  public bandwidths: number[] = [0];
 
   /** Average of `bandwidths` property. */
-  public averageBandwidth: number;
+  public averageBandwidth: number = 0;
 
   private _minSize: number;
 
@@ -18,8 +18,8 @@ class NetworkBandwidthInformation {
   constructor(minimumFileSize: number = 10) {
     this._minSize = minimumFileSize;
 
-    this.bandwidths = this.getBandwidths();
-    this.averageBandwidth = this.getAverageBandwidth();
+    // this.bandwidths = this.getBandwidths();
+    // this.averageBandwidth = this.getAverageBandwidth();
   }
 
   /**
@@ -28,21 +28,24 @@ class NetworkBandwidthInformation {
    */
   public getBandwidths(): number[] {
     const resources = window.performance.getEntries();
-    const bandwidths = resources
-    // @ts-ignore
-      .filter((entry: PerformanceResourceTiming) => {
-        return entry.transferSize && entry.transferSize > this._minSize;
-      })
-      .map((entry: PerformanceResourceTiming) => {
-        const transferTime = entry.responseEnd - entry.responseStart;
-        const { transferSize } = entry;
+    if (resources) {
+      const bandwidths = resources
+        // @ts-ignore
+        .filter((entry: PerformanceResourceTiming) => {
+          return entry.transferSize && entry.transferSize > this._minSize;
+        })
+        .map((entry: PerformanceResourceTiming) => {
+          const transferTime = entry.responseEnd - entry.responseStart;
+          const { transferSize } = entry;
 
-        return transferSize / transferTime;
-      });
+          return transferSize / transferTime;
+        });
 
-    this.bandwidths = bandwidths;
-    this.getAverageBandwidth();
-    return bandwidths;
+      this.bandwidths = bandwidths;
+      this.getAverageBandwidth();
+      return bandwidths;
+    }
+    return [0];
   }
 
   /**
@@ -50,16 +53,16 @@ class NetworkBandwidthInformation {
    * @method getAverageBandwidth
    */
   public getAverageBandwidth(): number {
-    if (this.bandwidths !== []) {
-      const sum = this.bandwidths.reduce((previous, current) => {
-        const val = current + previous;
-        return val;
-      });
-      const avg = sum / this.bandwidths.length;
-      this.averageBandwidth = avg;
-      return avg;
+    if (this.bandwidths === []) {
+      return 0;
     }
-    return 0;
+    const sum = this.bandwidths.reduce((previous, current) => {
+      const val = current + previous;
+      return val;
+    });
+    const avg = sum / this.bandwidths.length;
+    this.averageBandwidth = avg;
+    return avg;
   }
 }
 
