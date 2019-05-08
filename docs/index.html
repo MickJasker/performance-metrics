@@ -65,16 +65,15 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="performance-metrics">Performance metrics</h1>
-				<p>This project uses yarn. Do not use npm if you wish to contribute to this project!</p>
-				<p><code>$ yarn</code></p>
-				<p><code>$ yarn test</code> to test</p>
-				<p><code>$ yarn test:dev</code> to watch tests</p>
-				<p><code>$ yarn build</code> to build the code to the <code>/lib</code> folder.</p>
-				<p><code>$ yarn doc</code> to generated documentation in the <code>./docs</code> folder</p>
+				<p><img src="https://img.shields.io/npm/v/device-performance-metrics.svg" alt="npm">
+					<img src="https://img.shields.io/bundlephobia/min/device-performance-metrics.svg" alt="npm bundle size">
+					<img src="https://img.shields.io/bundlephobia/minzip/device-performance-metrics.svg" alt="npm bundle size">
+					<img src="https://img.shields.io/github/license/MickJasker/performance-metrics.svg" alt="GitHub">
+				<img src="https://img.shields.io/npm/dt/device-performance-metrics.svg" alt="npm"></p>
 				<h2 id="usage">Usage</h2>
 				<h3 id="installation">Installation</h3>
 				<p>To install the library run <code>$ yarn add device-performance-metrics</code> in the root of your project.</p>
-				<h3 id="example-usage">Example usage</h3>
+				<h3 id="basic-usage">Basic usage</h3>
 				<p>Importing the library globally:</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> PerformanceMetrics <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
 
@@ -91,15 +90,72 @@
 <span class="hljs-keyword">import</span> { FPSCounter } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
 
 <span class="hljs-keyword">const</span> deviceSpecs = <span class="hljs-keyword">new</span> DeviceSpecifications();
-<span class="hljs-keyword">const</span> browser =  deviceSpecs.getBrowser();
+<span class="hljs-keyword">const</span> browser = deviceSpecs.getBrowser();
 
 <span class="hljs-keyword">const</span> networkBandwidth = <span class="hljs-keyword">new</span> NetworkBandwidthInformation();
 <span class="hljs-keyword">const</span> avgBandwidth = networkBandwidth.getAverageBandwidth();
 
 <span class="hljs-keyword">const</span> fpsCounter = <span class="hljs-keyword">new</span> FPSCounter();
-<span class="hljs-keyword">const</span> fps = fpsCounter.fps</code></pre>
-				<h3 id="typedoc">Typedoc</h3>
-				<p>Detailed information about all propterties, methods, etc. can be found in the <a href="https://mickjasker.github.io/performance-metrics/">typedoc</a>.</p>
+<span class="hljs-keyword">const</span> fps = fpsCounter.fps;</code></pre>
+				<h3 id="getting-device-specifications">Getting device specifications</h3>
+				<p>The class <code>DeviceSpecifications</code> gives you the ability to get basic specifications about your user&#39;s device. For example his browser and OS:</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DeviceSpecifications } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+
+<span class="hljs-keyword">const</span> deviceSpecs: DeviceSpecifications = <span class="hljs-keyword">new</span> DeviceSpecifications();
+
+<span class="hljs-keyword">const</span> browser = deviceSpecs.getBrowser();
+
+<span class="hljs-keyword">const</span> browserName = browser.name;
+<span class="hljs-keyword">const</span> browserVersion = browser.version;
+
+<span class="hljs-keyword">const</span> OS = deviceSpecs.getOS();
+
+<span class="hljs-keyword">const</span> OSName = OS.name;
+<span class="hljs-keyword">const</span> OSVersion = OS.version;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Browser: <span class="hljs-subst">${browserName}</span>(<span class="hljs-subst">${browserVersion}</span>), OS: <span class="hljs-subst">${OSName}</span>(<span class="hljs-subst">${OSVersion}</span>)`</span>);
+<span class="hljs-comment">// example log: 'Browser: Chrome(73.0.3683), OS: MacOS(10.14.4)'</span></code></pre>
+				<h3 id="network-bandwidth">Network bandwidth</h3>
+				<p>If you need to get information about the bandwidth you can use the <code>NetworkBandwidthInformation</code> class.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { NetworkBandwidthInformation } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+
+<span class="hljs-keyword">const</span> networkInfo: NetworkBandwidthInformation = <span class="hljs-keyword">new</span> NetworkBandwidthInformation();
+
+<span class="hljs-comment">// Logs an array of all measured bandwidths found when the class is contstructed</span>
+<span class="hljs-built_in">console</span>.log(networkInfo.bandwidths);
+<span class="hljs-comment">// example log: [1432, 4234, 7686]</span>
+
+<span class="hljs-comment">// Logs an avaerge of all measured bandwidths found when the class is contstructed</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${networkInfo.averageBandwidth}</span>bps`</span>);
+<span class="hljs-comment">// example log: 3973bpms</span>
+
+<span class="hljs-comment">// Because the above values are made when the class is contstructed you also directly trigger the functions that get the data, for example:</span>
+
+<span class="hljs-built_in">console</span>.log(networkInfo.getAverageBandwidth());
+<span class="hljs-comment">// example log: 4264bpms</span></code></pre>
+				<h3 id="fps">FPS</h3>
+				<p>The <code>FPSCounter</code> class gives you the ability to get the current framerate.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { FPSCounter } <span class="hljs-keyword">from</span> <span class="hljs-string">'device-performance-metrics'</span>;
+
+<span class="hljs-keyword">const</span> fpsCounter: FPSCounter = <span class="hljs-keyword">new</span> FPSCounter();
+
+<span class="hljs-comment">// Logs the current FPS</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${fpsCounter.fps}</span>fps`</span>)
+<span class="hljs-comment">// Example log: 60fps</span></code></pre>
+				<p>If you want to get realtime information about the framerate you can use the <code>setInterval()</code> function:</p>
+				<pre><code class="language-typescript"><span class="hljs-comment">// Logs the current FPS every 500ms.</span>
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${fpsCounter.fps}</span>fps`</span>);
+}, <span class="hljs-number">500</span>);</code></pre>
+				<h2 id="typedoc">Typedoc</h2>
+				<p>Detailed documentation can be found in the <a href="https://mickjasker.github.io/performance-metrics/">typedoc</a>.</p>
+				<h2 id="building">Building</h2>
+				<p>This project forces you to use <code>yarn</code>;</p>
+				<p><code>$ yarn</code></p>
+				<p><code>$ yarn test</code> to test</p>
+				<p><code>$ yarn test:dev</code> to watch tests</p>
+				<p><code>$ yarn build</code> to build the code to the <code>/lib</code> folder.</p>
+				<p><code>$ yarn doc</code> to generated documentation in the <code>./docs</code> folder</p>
 				<h2 id="contribution">Contribution</h2>
 				<p>TODO</p>
 			</div>
@@ -115,6 +171,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="classes/deviceperformancemetrics.html" class="tsd-kind-icon">Device<wbr>Performance<wbr>Metrics</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/devicespecifications.html" class="tsd-kind-icon">Device<wbr>Specifications</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -122,9 +181,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/networkbandwidthinformation.html" class="tsd-kind-icon">Network<wbr>Bandwidth<wbr>Information</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/performancemetrics.html" class="tsd-kind-icon">Performance<wbr>Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="interfaces/ibrowser.html" class="tsd-kind-icon">IBrowser</a>

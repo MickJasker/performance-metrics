@@ -1,57 +1,68 @@
 /**
  * @namespace NetworkBandwidthInformation
  * @class NetworkBandwidthInformation
- * @constructor
- * @param {number} minimumFileSize Provide the minimum file size to the brandwidth against in bytes.
+ * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
  */
 class NetworkBandwidthInformation {
-  public bandwidths: number[];
+  /** `number[]` containing all bandwidths. */
+  public bandwidths: number[] = [0];
 
-  public averageBandwidth: number;
+  /** Average of `bandwidths` property. */
+  public averageBandwidth: number = 0;
 
   private _minSize: number;
 
-  constructor(minimumFileSize?: number) {
-    this._minSize = 0;
+  /**
+   * @param {number} minimumFileSize Provide the minimum file size of the files you want to get the bandwidth of.
+   */
+  constructor(minimumFileSize: number = 10) {
+    this._minSize = minimumFileSize;
 
-    if (minimumFileSize) {
-      this._minSize = minimumFileSize;
-    }
-
-    this.bandwidths = this.getBandwidths();
-    this.averageBandwidth = this.getAverageBandwidth();
+    // this.bandwidths = this.getBandwidths();
+    // this.averageBandwidth = this.getAverageBandwidth();
   }
 
+  /**
+   * Returns an array of all bandwidths.
+   * @method getBandwidths
+   */
   public getBandwidths(): number[] {
     const resources = window.performance.getEntries();
-    const bandwidths: number[] = [];
-    // @ts-ignore
-    resources.forEach((entry: PerformanceResourceTiming) => {
-      if (entry.transferSize && entry.transferSize > this._minSize) {
-        const transferTime = entry.responseEnd - entry.responseStart;
-        const { transferSize } = entry;
+    if (resources) {
+      const bandwidths = resources
+        // @ts-ignore
+        .filter((entry: PerformanceResourceTiming) => {
+          return entry.transferSize && entry.transferSize > this._minSize;
+        })
+        .map((entry: PerformanceResourceTiming) => {
+          const transferTime = entry.responseEnd - entry.responseStart;
+          const { transferSize } = entry;
 
-        const bpms = transferSize / transferTime;
+          return transferSize / transferTime;
+        });
 
-        bandwidths.push(bpms);
-      }
-    });
-    this.bandwidths = bandwidths;
-    this.getAverageBandwidth();
-    return bandwidths;
+      this.bandwidths = bandwidths;
+      this.getAverageBandwidth();
+      return bandwidths;
+    }
+    return [0];
   }
 
+  /**
+   * Returns an average of `this.bandwidths`
+   * @method getAverageBandwidth
+   */
   public getAverageBandwidth(): number {
-    if (this.bandwidths !== []) {
-      const sum = this.bandwidths.reduce((previous, current) => {
-        const val = current + previous;
-        return val;
-      });
-      const avg = sum / this.bandwidths.length;
-      this.averageBandwidth = avg;
-      return avg;
+    if (this.bandwidths === []) {
+      return 0;
     }
-    return 0;
+    const sum = this.bandwidths.reduce((previous, current) => {
+      const val = current + previous;
+      return val;
+    });
+    const avg = sum / this.bandwidths.length;
+    this.averageBandwidth = avg;
+    return avg;
   }
 }
 

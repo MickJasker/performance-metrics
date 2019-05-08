@@ -3,30 +3,35 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "DeviceSpecifications", {
+  enumerable: true,
+  get: function get() {
+    return _DeviceSpecifications.default;
+  }
+});
+Object.defineProperty(exports, "NetworkBandwidthInformation", {
+  enumerable: true,
+  get: function get() {
+    return _NetworkBandwidthInformation.default;
+  }
+});
+Object.defineProperty(exports, "FPSCounter", {
+  enumerable: true,
+  get: function get() {
+    return _FPSCounter.default;
+  }
+});
 exports.default = void 0;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _DeviceSpecifications = _interopRequireDefault(require("./lib/DeviceSpecifications"));
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var _NetworkBandwidthInformation = _interopRequireDefault(require("./lib/NetworkBandwidthInformation"));
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+var _DevicePerformanceMetrics = _interopRequireDefault(require("./lib/DevicePerformanceMetrics"));
 
-var Class =
-/*#__PURE__*/
-function () {
-  function Class() {
-    _classCallCheck(this, Class);
-  }
+var _FPSCounter = _interopRequireDefault(require("./lib/FPSCounter"));
 
-  _createClass(Class, [{
-    key: "getData",
-    value: function getData() {
-      return '';
-    }
-  }]);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  return Class;
-}();
-
-var _default = Class;
+var _default = _DevicePerformanceMetrics.default;
 exports.default = _default;

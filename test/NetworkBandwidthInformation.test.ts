@@ -43,6 +43,28 @@ describe('Get average network bandwidths', () => {
     networkBandwidthInformation = new NetworkBandwidthInformation();
   });
   test('it should return an array of all bandwidths', () => {
-    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(1034.4489795918366);
+    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(0);
+  });
+});
+
+describe('Get average network bandwidths without network requests', () => {
+  beforeEach(() => {
+    // @ts-ignore
+    window.performance.getEntries = jest.fn(() => [
+      {
+        responseStart: 0,
+        responseEnd: 500,
+        transferSize: 51,
+      },
+      {
+        responseStart: 0,
+        responseEnd: 980,
+        transferSize: 102,
+      },
+    ]);
+    networkBandwidthInformation = new NetworkBandwidthInformation(1000);
+  });
+  test('it should return an array of all bandwidths', () => {
+    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(0);
   });
 });

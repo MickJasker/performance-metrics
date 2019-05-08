@@ -1,13 +1,15 @@
 {
   "name": "device-performance-metrics",
-  "version": "1.0.3",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "version": "1.1.7",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:ts": "tsc --watch",
     "dev:babel": "babel ./lib --out-dir lib --extensions \".js,.jsx\" --watch",
-    "build": "tsc && babel ./lib --out-dir lib --extensions \".js,.jsx\"",
+    "build": "npm-run-all build:*",
+    "build:babel": "babel ./src -x \".ts\" -x \".js\" --out-dir ./",
+    "build:ts": "tsc",
     "test": "jest",
     "test:dev": "jest --watchAll",
     "doc": "npm-run-all -p doc:*",
@@ -19,7 +21,8 @@
     "@babel/polyfill": "^7.4.0",
     "browserslist-useragent": "^3.0.0",
     "fps-emitter": "^1.0.0",
-    "useragent": "^2.3.0"
+    "useragent": "^2.3.0",
+    "yamlparser": "^0.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

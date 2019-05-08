@@ -75,10 +75,11 @@
 						<dt>class</dt>
 						<dd><p>DeviceSpecifications</p>
 						</dd>
-						<dt>constructor</dt>
-						<dd></dd>
 						<dt>param</dt>
 						<dd><p>Provide a user agent, if none is provided <code>navigator.useragent</code> will be used by default.</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Provide a <code>string[]</code> of a browserslist to manually overide the default value: <code>[&#39;last 5 versions&#39;, &#39;&gt; 3%&#39;, &#39;not ie &lt;= 11&#39;]</code></p>
 						</dd>
 					</dl>
 				</div>
@@ -133,16 +134,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L32">lib/DeviceSpecifications.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L36">lib/DeviceSpecifications.ts:36</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> UserAgentString: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Provide a user agent, if none is provided <code>navigator.useragent</code> will be used by default.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> browserslist: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Provide a <code>string[]</code> of a browserslist to manually overide the default value: <code>[&#39;last 5 versions&#39;, &#39;&gt; 3%&#39;, &#39;not ie &lt;= 11&#39;]</code></p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="devicespecifications.html" class="tsd-signature-type">DeviceSpecifications</a></h4>
@@ -158,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">_agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Agent</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L29">lib/DeviceSpecifications.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L31">lib/DeviceSpecifications.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,7 +181,7 @@
 					<div class="tsd-signature tsd-kind-icon">_browsers<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L32">lib/DeviceSpecifications.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L36">lib/DeviceSpecifications.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<wbr>String<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L31">lib/DeviceSpecifications.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L34">lib/DeviceSpecifications.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -200,12 +213,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L60">lib/DeviceSpecifications.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L67">lib/DeviceSpecifications.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns information about the browser</p>
+									<p>Returns returns an object containing:</p>
+									<ul>
+										<li>name</li>
+										<li>version (eg. 1.2.3)</li>
+										<li>major version</li>
+									</ul>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
@@ -227,14 +245,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L90">lib/DeviceSpecifications.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L100">lib/DeviceSpecifications.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns information about the device.</p>
+									<p>Returns the mobile device typs (eg. iPhone, Android, etc.)</p>
 								</div>
-								<p>Only works on mobile devices.</p>
+								<p>Only works on mobile devices!</p>
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
 									<dd><p>getDevice</p>
@@ -255,12 +273,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L74">lib/DeviceSpecifications.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L84">lib/DeviceSpecifications.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns information about the operating system</p>
+									<ul>
+										<li>Returns returns an object containing:<ul>
+												<li>name</li>
+												<li>version (eg. 1.2.3)</li>
+												<li>major version</li>
+											</ul>
+										</li>
+									</ul>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
@@ -282,12 +307,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/00e29b2/src/lib/DeviceSpecifications.ts#L104">lib/DeviceSpecifications.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/MickJasker/performance-metrics/blob/6eb9aae/src/lib/DeviceSpecifications.ts#L115">lib/DeviceSpecifications.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns if the browser is modern.</p>
+									<p>Returns if the browser is up to date using browserslist.
+									Keep the library up-to-date to keep this functionality working properly</p>
 								</div>
 								<p>Warning: this is general detection if the browser is a modern browser, it is not a replacement of feature detection libraries like mordernizer.</p>
 								<dl class="tsd-comment-tags">
@@ -312,6 +338,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="deviceperformancemetrics.html" class="tsd-kind-icon">Device<wbr>Performance<wbr>Metrics</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
@@ -350,9 +379,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="networkbandwidthinformation.html" class="tsd-kind-icon">Network<wbr>Bandwidth<wbr>Information</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="performancemetrics.html" class="tsd-kind-icon">Performance<wbr>Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="../interfaces/ibrowser.html" class="tsd-kind-icon">IBrowser</a>
