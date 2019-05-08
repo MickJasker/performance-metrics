@@ -5,10 +5,10 @@
  */
 class NetworkBandwidthInformation {
   /** `number[]` containing all bandwidths. */
-  public bandwidths: number[] = [0];
+  public bandwidths: number[] | undefined;
 
   /** Average of `bandwidths` property. */
-  public averageBandwidth: number = 0;
+  public averageBandwidth: number | undefined;
 
   private _minSize: number;
 
@@ -24,9 +24,11 @@ class NetworkBandwidthInformation {
 
   /**
    * Returns an array of all bandwidths.
+   *
+   * Returns ``` undefined ``` if there are no bandwidths matching the minimum file size requirement.
    * @method getBandwidths
    */
-  public getBandwidths(): number[] {
+  public getBandwidths(): number[] | undefined {
     const resources = window.performance.getEntries();
     if (resources) {
       const bandwidths = resources
@@ -41,26 +43,32 @@ class NetworkBandwidthInformation {
           return transferSize / transferTime;
         });
 
-      this.bandwidths = bandwidths;
-      this.getAverageBandwidth();
-      return bandwidths;
+      if (bandwidths.length > 0) {
+        this.bandwidths = bandwidths;
+        return bandwidths;
+      }
+      return undefined;
     }
-    return [0];
+    return undefined;
   }
 
   /**
    * Returns an average of `this.bandwidths`
+   *
+   * Returns ``` undefined ``` if there are no bandwidths matching the minimum file size requirement.
    * @method getAverageBandwidth
    */
-  public getAverageBandwidth(): number {
-    if (this.bandwidths === []) {
-      return 0;
+  public getAverageBandwidth(): number | undefined {
+    this.getBandwidths();
+    if (!this.bandwidths) {
+      return undefined;
     }
     const sum = this.bandwidths.reduce((previous, current) => {
       const val = current + previous;
       return val;
     });
     const avg = sum / this.bandwidths.length;
+
     this.averageBandwidth = avg;
     return avg;
   }

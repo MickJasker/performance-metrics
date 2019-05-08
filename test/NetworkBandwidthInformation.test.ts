@@ -43,7 +43,7 @@ describe('Get average network bandwidths', () => {
     networkBandwidthInformation = new NetworkBandwidthInformation();
   });
   test('it should return an array of all bandwidths', () => {
-    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(0);
+    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(1034.4489795918366);
   });
 });
 
@@ -65,6 +65,6 @@ describe('Get average network bandwidths without network requests', () => {
     networkBandwidthInformation = new NetworkBandwidthInformation(1000);
   });
   test('it should return an array of all bandwidths', () => {
-    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(0);
+    expect(networkBandwidthInformation.getAverageBandwidth()).toEqual(undefined);
   });
 });
