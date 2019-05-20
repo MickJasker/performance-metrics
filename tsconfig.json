@@ -8,6 +8,7 @@
     "strict": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
+    "module": "esnext",
     "outDir": "./tmp",
     "lib": [
       "DOM",
